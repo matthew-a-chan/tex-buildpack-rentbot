@@ -7,6 +7,5 @@ cd $1
 # make a directory to untar (like unzip) the binary
 mkdir -p vendor/texlive
 # untar the binary to the directory we want
-tar -C vendor/texlive -xvf texlive.tar.gz
-export PATH=/app/vendor/texlive/bin/x86_64-linux:$PATH
-echo All set up! Path is: $PATH
+tar -C vendor/texlive -xf texlive.tar.gz
+echo "export PATH=/app/vendor/texlive/bin/x86_64-linux:\$PATH" > .profile.d/tex-buildpack-rentbot.profile.sh
