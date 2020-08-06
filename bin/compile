@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+echo "-----> Installing texlive"
+# Copy the binary archive to BUILD_DIR ($1)
+cp texlive.tar.gz $1/texlive.tar.gz
+# change to the BUILD_DIR ($1)
+cd $1
+# make a directory to untar (like unzip) the binary
+mkdir -p vendor/texlive
+# untar the binary to the directory we want
+tar -C vendor/texlive -xvf texlive.tar.gz
+export PATH=/app/vendor/texlive/bin/x86_64-linux:$PATH
